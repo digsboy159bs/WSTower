@@ -29,7 +29,7 @@ namespace WSTower.Controllers
             }
         }
 
-        [HttpGet("estadio")]
+       /* [HttpGet("estadio")]
        // [Route("Jogo/{estadio}")]
         public IActionResult BuscarPorEstadio(string estadio)
         {
@@ -39,7 +39,7 @@ namespace WSTower.Controllers
                 return NotFound(" não há jogos nesse estadio");
             }
             return Ok(jogo);
-        }
+        }/*/
 
         /*[HttpGet]
         public IActionResult PlacarConfronto()

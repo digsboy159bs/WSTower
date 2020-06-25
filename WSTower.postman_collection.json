@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "5129ad63-7495-4909-8a27-f2c1856f61e9",
+		"name": "WSTower",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Jogador",
+			"item": [
+				{
+					"name": "Listar_Jogador",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/Jogador",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"Jogador"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastar_Jogador",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/Jogador",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"Jogador"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar_Jogador",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/Jogador",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"Jogador"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar_Jogador",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/Jogador/2",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"Jogador",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarPorNome_Jogador",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/Jogador/Buffon",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"Jogador",
+								"Buffon"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Jogo",
+			"item": [
+				{
+					"name": "Listar_Jogos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/Jogo",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"Jogo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarPorData_Jogos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/Jogo/2000-12-20T00:00:00",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"Jogo",
+								"2000-12-20T00:00:00"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar_Jogos",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/Jogo/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"Jogo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastar_Jogos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/Jogo",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"Jogo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar_Jogos",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/Jogo",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"Jogo"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Seleção",
+			"item": [
+				{
+					"name": "Listar_Seleção",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/Selecao",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"Selecao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastar_Seleção",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Selecao",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Selecao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar_Selecao",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Selecao",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Selecao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar_Seleção",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Selecao/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Selecao",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

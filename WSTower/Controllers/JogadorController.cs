@@ -88,7 +88,7 @@ namespace WSTower.Controllers
             return Ok("Jogador deletado com sucesso");
         }
 
-        [HttpGet("{selecaoid}")]
+        /*/[HttpGet("{selecaoid}")]
         //[Route("Jogador/{selecaoid}")]
         
 
@@ -101,6 +101,6 @@ namespace WSTower.Controllers
             }
 
             return Ok(jogador);
-        }
+        }/*/
     }
 }

@@ -92,6 +92,14 @@ namespace WSTower.Repositories
             }
         }
 
+        /*public Jogo BuscarPorSelecao(int selecaoid)
+        {
+            using (WSTowerContext ctx = new WSTowerContext())
+            {
+                return ctx.Jogo.FirstOrDefault(x => x.);
+            }
+        }/*/
+
 
     }
 }
