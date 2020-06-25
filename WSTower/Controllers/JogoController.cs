@@ -17,9 +17,28 @@ namespace WSTower.Controllers
         JogoRepository jogoRepository = new JogoRepository();
 
         [HttpGet]
-        public IActionResult ListarConfrontos()
+        public IActionResult Get()
         {
-            return Ok(jogoRepository.ListarJogos());
+            try
+            {
+                return Ok(jogoRepository.ListarJogos());
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro);
+            }
+        }
+
+        [HttpGet("estadio")]
+       // [Route("Jogo/{estadio}")]
+        public IActionResult BuscarPorEstadio(string estadio)
+        {
+            Jogo jogo = jogoRepository.BuscarPorEstadio(estadio);
+            if (jogo == null)
+            {
+                return NotFound(" não há jogos nesse estadio");
+            }
+            return Ok(jogo);
         }
 
         /*[HttpGet]
@@ -28,13 +47,26 @@ namespace WSTower.Controllers
             return Ok(jogoRepository.PlacarFinal());
         }/*/
 
-        [HttpGet("{id}")]
+        /*[HttpGet]
+        [Route("{id}")]
         public IActionResult BuscarPorId(int id)
         {
             Jogo jogo = jogoRepository.BucarPorId(id);
             if (jogo == null)
             {
                 return NotFound();
+            }
+            return Ok(jogo);
+        }/*/
+
+        [HttpGet]
+        [Route("{data}")]
+        public IActionResult BuscarPorData(DateTime data)
+        {
+            Jogo jogo = jogoRepository.BuscarPorData(data);
+            if (jogo == null)
+            {
+                return NotFound("Nesta data não há jogos");
             }
             return Ok(jogo);
         }

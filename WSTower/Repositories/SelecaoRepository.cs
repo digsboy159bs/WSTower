@@ -16,7 +16,47 @@ namespace WSTower.Repositories
             using (WSTowerContext ctx = new WSTowerContext())
             {
                 
-                return ctx.Selecao.Include(x => x.Jogador).ToList();
+                return ctx.Selecao
+                    .Include(x => x.JogoSelecaoCasaNavigation).Include(x => x.JogoSelecaoVisitanteNavigation)
+                    .ToList();
+            }
+        }
+
+        public void Cadastar(Selecao selecao)
+        {
+            using (WSTowerContext ctx =new WSTowerContext())
+            {
+                ctx.Selecao.Add(selecao);
+                ctx.SaveChanges();
+            }
+        }
+
+        public void Deletar(int id)
+        {
+            using (WSTowerContext ctx = new WSTowerContext())
+            {
+                Selecao selecaoid = ctx.Selecao.Find(id);
+                ctx.Selecao.Remove(selecaoid);
+                ctx.SaveChanges();
+            }
+        }
+
+        public void Atualizar(Selecao selecao)
+        {
+            using (WSTowerContext ctx = new WSTowerContext())
+            {
+                Selecao selecaoAtualizada = ctx.Selecao.FirstOrDefault(x => x.Id == selecao.Id);
+                selecaoAtualizada.Id = selecao.Id;
+                ctx.Selecao.Update(selecaoAtualizada);
+                ctx.SaveChanges();
+            }
+        }
+
+        public Selecao BuscarPorId(int id)
+        {
+            using (WSTowerContext ctx = new WSTowerContext())
+            {
+                return ctx.Selecao.FirstOrDefault(x => x.Id == id);
             }
         }
     }

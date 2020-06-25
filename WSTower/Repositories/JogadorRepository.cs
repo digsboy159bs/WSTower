@@ -64,5 +64,21 @@ namespace WSTower.Repositories
                 ctx.SaveChanges();
             }
         }
+
+        public Jogador BuscarPorNome(string nome)
+        {
+            using (WSTowerContext ctx = new WSTowerContext())
+            {
+                return ctx.Jogador.FirstOrDefault(x => x.Nome == nome);
+            }
+        }
+
+        public Jogador BuscarPorSelecao(int selecao)
+        {
+            using (WSTowerContext ctx = new WSTowerContext())
+            {
+                return ctx.Jogador.FirstOrDefault(x => x.SelecaoId == selecao);
+            }
+        }
     }
 }

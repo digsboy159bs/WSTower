@@ -13,23 +13,37 @@ namespace WSTower.Repositories
     public class JogoRepository
     {
 
+
         //Lista todos os jogos
         public List<Jogo> ListarJogos()
         {
             using (WSTowerContext ctx = new WSTowerContext())
             {
-                return ctx.Jogo.ToList();
+
+                return ctx.Jogo.Include(x => x.SelecaoCasaNavigation).Include(x => x.SelecaoVisitanteNavigation).ToList();
+
+
+
+            }
+            
+        }
+
+        public Jogo BuscarPorEstadio(string estadio)
+        {
+            using (WSTowerContext ctx = new WSTowerContext())
+            {
+                return ctx.Jogo.FirstOrDefault(x => x.Estadio == estadio);
             }
         }
 
-        public string PlacarFinal()
+        /*public string PlacarFinal()
         {
                 string placarFinal;
                 Jogo jogo = new Jogo();
                 placarFinal = jogo.PlacarCasa + " x " + jogo.PlacarVisitante;
                 return placarFinal;
             
-        }
+        }/*/
 
         public Jogo BucarPorId(int id)
         {
@@ -60,7 +74,7 @@ namespace WSTower.Repositories
 
         public void Atualizar(Jogo jogo)
         {
-            using (WSTowerContext ctx = new WSTowerContext()) 
+            using (WSTowerContext ctx = new WSTowerContext())
             {
                 Jogo jogoAtualizado = ctx.Jogo.FirstOrDefault(x => x.Id == jogo.Id);
                 jogoAtualizado.Id = jogo.Id;
@@ -69,5 +83,15 @@ namespace WSTower.Repositories
 
             }
         }
+
+        public Jogo BuscarPorData(DateTime data)
+        {
+            using (WSTowerContext ctx = new WSTowerContext())
+            {
+                return ctx.Jogo.FirstOrDefault(x => x.Data == data);
+            }
+        }
+
+
     }
 }
